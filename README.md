@@ -17,9 +17,9 @@ def show(rgb_arrays, fmt='png'):
         display(Image(data=f.getvalue()))
         clear_output(wait=True)
 
-def save(rgb_arrays,  name='./array.gif'):
+def save(rgb_arrays, path='./array.gif'):
     im = [PIL.Image.fromarray(rgb) for rgb in rgb_arrays]
-    im[0].save("array.gif", save_all=True, append_images=im[1:], duration=50, loop=0)
+    im[0].save(path, save_all=True, append_images=im[1:], duration=50, loop=0)
 
 n = 500; h = 256; w = 256
 random_rgb_arrays = np.random.randint(0, 255, n*h*w*3).reshape(n,h,w,3).astype(np.uint8)
